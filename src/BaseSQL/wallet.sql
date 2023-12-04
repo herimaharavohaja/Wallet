@@ -2,6 +2,7 @@ create database wallet;
 
 CREATE TABLE compte (
     id SERIAL PRIMARY KEY,
+    Nom VARCHAR(100);
     solde DECIMAL(15, 2),
     synchronisation VARCHAR(50),
     date_transaction DATE,

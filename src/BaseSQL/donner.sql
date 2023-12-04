@@ -1,17 +1,17 @@
-INSERT INTO compte (solde, synchronisation, date_transaction, document_importe, carte_number)
-VALUES (1000.00, 'Sync A', '2023-01-15', E'\\x5354415254', '1234567890123456');
+INSERT INTO compte (Name, solde, synchronisation, date_transaction, document_importe, carte_number)
+VALUES (Razaka, 1000.00, 'Sync A', '2023-01-15', E'\\x5354415254', '1234567890123456');
 
-INSERT INTO compte (solde, synchronisation, date_transaction, document_importe, carte_number)
-VALUES (2500.50, 'Sync B', '2023-02-28', E'\\x444f43554d454e54', '9876543210987654');
+INSERT INTO compte (Name, solde, synchronisation, date_transaction, document_importe, carte_number)
+VALUES (Randry, 2500.50, 'Sync B', '2023-02-28', E'\\x444f43554d454e54', '9876543210987654');
 
-INSERT INTO compte (solde, synchronisation, date_transaction, document_importe, carte_number)
-VALUES (500.75, 'Sync C', '2023-03-10', E'\\x4652414e4345', '5678901234567890');
+INSERT INTO compte (Name, solde, synchronisation, date_transaction, document_importe, carte_number)
+VALUES (Benja, 500.75, 'Sync C', '2023-03-10', E'\\x4652414e4345', '5678901234567890');
 
-INSERT INTO compte (solde, synchronisation, date_transaction, document_importe, carte_number)
-VALUES (800.20, 'Sync D', '2023-04-05', E'\\x4558545241', '3456789012345678');
+INSERT INTO compte (Name, solde, synchronisation, date_transaction, document_importe, carte_number)
+VALUES (Koto, 800.20, 'Sync D', '2023-04-05', E'\\x4558545241', '3456789012345678');
 
-INSERT INTO compte (solde, synchronisation, date_transaction, document_importe, carte_number)
-VALUES (3000.80, 'Sync E', '2023-05-20', E'\\x4652554953', '7890123456789012');
+INSERT INTO compte (Name solde, synchronisation, date_transaction, document_importe, carte_number)
+VALUES (Lita, 3000.80, 'Sync E', '2023-05-20', E'\\x4652554953', '7890123456789012');
 
 
 

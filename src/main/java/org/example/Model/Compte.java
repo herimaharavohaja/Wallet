@@ -6,6 +6,7 @@ import java.util.Objects;
 
 public class Compte {
     private int id;
+    private String Name;
     private double solde;
     private String synchronisation;
     private Date dateTransaction;
@@ -15,12 +16,12 @@ public class Compte {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Compte compte)) return false;
-        return id == compte.id && Double.compare(compte.solde, solde) == 0 && Objects.equals(synchronisation, compte.synchronisation) && Objects.equals(dateTransaction, compte.dateTransaction) && Arrays.equals(documentImporte, compte.documentImporte);
+        return id == compte.id && Double.compare(compte.solde, solde) == 0 && Objects.equals(Name, compte.Name) && Objects.equals(synchronisation, compte.synchronisation) && Objects.equals(dateTransaction, compte.dateTransaction) && Arrays.equals(documentImporte, compte.documentImporte);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(id, solde, synchronisation, dateTransaction);
+        int result = Objects.hash(id, Name, solde, synchronisation, dateTransaction);
         result = 31 * result + Arrays.hashCode(documentImporte);
         return result;
     }
@@ -29,6 +30,7 @@ public class Compte {
     public String toString() {
         return "Compte{" +
                 "id=" + id +
+                ", Name='" + Name + '\'' +
                 ", solde=" + solde +
                 ", synchronisation='" + synchronisation + '\'' +
                 ", dateTransaction=" + dateTransaction +
@@ -42,6 +44,14 @@ public class Compte {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     public double getSolde() {

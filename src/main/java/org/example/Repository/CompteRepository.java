@@ -12,6 +12,7 @@ public class CompteRepository {
     private static final String SELECT_BY_ID_QUERY = "SELECT * FROM compte WHERE id = ?";
     private static final String UPDATE_QUERY = "UPDATE compte SET solde = ?, synchronisation = ?, date_transaction = ?, document_importe = ?, carte_number = ? WHERE id = ?";
     private static final String CREATE_QUERY = "INSERT INTO compte (solde, synchronisation, date_transaction, document_importe, carte_number) VALUES (?, ?, ?, ?, ?)";
+
     public List<Compte> selectAllComptes() {
         List<Compte> comptes = new ArrayList<>();
 
@@ -23,6 +24,7 @@ public class CompteRepository {
             while (resultSet.next()) {
                 Compte compte = new Compte();
                 compte.setId(resultSet.getInt("id"));
+                compte.setName(resultSet.getString("Name"));
                 compte.setSolde(resultSet.getDouble("solde"));
                 compte.setSynchronisation(resultSet.getString("synchronisation"));
                 compte.setDateTransaction(resultSet.getDate("date_transaction"));
@@ -36,6 +38,7 @@ public class CompteRepository {
 
         return comptes;
     }
+
     public Compte getById(int id) {
         Compte compte = new Compte();
 
@@ -47,6 +50,7 @@ public class CompteRepository {
 
             if (resultSet.next()) {
                 compte.setId(resultSet.getInt("id"));
+                compte.setName(resultSet.getString("Name"));
                 compte.setSolde(resultSet.getDouble("solde"));
                 compte.setSynchronisation(resultSet.getString("synchronisation"));
                 compte.setDateTransaction(resultSet.getDate("date_transaction"));
@@ -58,6 +62,7 @@ public class CompteRepository {
 
         return compte;
     }
+
     public void updateCompte(Compte compte) {
         try (Connection connection = ConnectionDatabase.createConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_QUERY)) {
@@ -76,6 +81,7 @@ public class CompteRepository {
             e.printStackTrace();
         }
     }
+
     public void ajouteCompte(Compte compte) {
         try (Connection connection = ConnectionDatabase.createConnection();
              PreparedStatement statement = connection.prepareStatement(CREATE_QUERY, Statement.RETURN_GENERATED_KEYS)) {
